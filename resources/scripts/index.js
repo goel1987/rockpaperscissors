@@ -16,26 +16,30 @@ gameScreen.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-  scoreParagraph.innerHTML(game.username.user + ": " + game.score.user + " v "+game.username.cpu + ": " + game.score.cpu)
+  scoreParagraph.innerHTML = (game.username + ": " + game.score.username + " v "+ "CPU: " + game.score.cpu);
 }
 
 // updateGameHistoryUI
 function updateGameHistoryUI(){
-  gameHistoryParagraph.innerHTML('');
-  gameHistoryParagraph.innerHTML(gameHistoryLog.ToString());
+  gameHistoryParagraph.innerHTML = '';
+  gameHistoryParagraph.innerHTML= gameHistoryLog.ToString(); //TODO: get game history to show up.
 }
 
 // start-game-button EventListener
-startGameButton.addEventListener(`click`, function () {
-  const username = userName;
+startGameButton.addEventListener(`click`, function (e) {
+  e.preventDefault();
+  const username = userName; //TODO: Get username to show up correctly.
   game = new RockPaperScissors(username);
+  welcomeScreen.classList.add('d-none');
+  gameScreen.classList.remove('d-none');
   // Complete
 });
 
 // go-button EventListener
-goButton.addEventListener(`click`, function () {
-  const select = userSelection;
-  game.play(select);
+goButton.addEventListener(`submit`, function (e) {
+  e.preventDefault();
+  const selection = userSelection.selectedIndex;
+  game.play(selection);
   updateScoreTallyUI();
   updateGameHistoryUI();
 });
