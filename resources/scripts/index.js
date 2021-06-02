@@ -22,12 +22,11 @@ function updateScoreTallyUI(){
 // updateGameHistoryUI
 function updateGameHistoryUI(){
   gameHistoryParagraph.innerHTML = '';
-  gameHistoryParagraph.innerHTML= gameHistoryLog.ToString(); //TODO: get game history to show up.
+  gameHistoryParagraph.innerHTML = gameHistoryLog.ToString(); //TODO: get game history to show up.
 }
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function (e) {
-  e.preventDefault();
   const username = userName; //TODO: Get username to show up correctly.
   game = new RockPaperScissors(username);
   welcomeScreen.classList.add('d-none');
@@ -37,11 +36,11 @@ startGameButton.addEventListener(`click`, function (e) {
 
 // go-button EventListener
 goButton.addEventListener(`submit`, function (e) {
-  e.preventDefault();
   const selection = userSelection.selectedIndex;
   game.play(selection);
   updateScoreTallyUI();
   updateGameHistoryUI();
+  welcomeScreen.classList.add('d-none');
 });
 
 // If you're doing the extra-credit, uncomment the below: reset-game-button

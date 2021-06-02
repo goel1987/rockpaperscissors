@@ -5,3 +5,7 @@
 #game-screen {
   border: 1px solid red;
 }
+
+#game-history {
+  border: 1px solid black;
+}
