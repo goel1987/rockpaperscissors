@@ -22,12 +22,12 @@ function updateScoreTallyUI(){
 // updateGameHistoryUI
 function updateGameHistoryUI(){
   gameHistoryParagraph.innerHTML = '';
-  gameHistoryParagraph.innerHTML = gameHistoryLog.ToString(); //TODO: get game history to show up.
+  gameHistoryParagraph.innerHTML = gameHistoryLog.ToString(); //TODO: get game history to show up on game screen
 }
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function (e) {
-  const username = userName; //TODO: Get username to show up correctly.
+  const username = userName;
   game = new RockPaperScissors(username);
   welcomeScreen.classList.add('d-none');
   gameScreen.classList.remove('d-none');
