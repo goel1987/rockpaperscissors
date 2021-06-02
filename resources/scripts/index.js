@@ -27,10 +27,17 @@ function updateGameHistoryUI(){
 
 // start-game-button EventListener
 startGameButton.addEventListener(`click`, function (e) {
+<<<<<<< HEAD
   const username = userName;
+=======
+  username = userName.value; //TODO: Get username to show up correctly.
+>>>>>>> 9357d2aca438097696324ad7ec920d34f4af5c96
   game = new RockPaperScissors(username);
+
   welcomeScreen.classList.add('d-none');
   gameScreen.classList.remove('d-none');
+  updateScoreTallyUI();
+  updateGameHistoryUI();
   // Complete
 });
 
