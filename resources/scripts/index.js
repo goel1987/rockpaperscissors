@@ -16,7 +16,7 @@ gameScreen.classList.add(`d-none`);
 
 // updateScoreTallyUI
 function updateScoreTallyUI(){
-  scoreParagraph.innerHTML = (game.username + ": " + game.score.username + " v "+ "CPU: " + game.score.cpu);
+  scoreParagraph.innerHTML = (game.username + ": " + game.score.user + " v "+ "CPU: " + game.score.cpu);
 }
 
 // updateGameHistoryUI
@@ -35,7 +35,7 @@ startGameButton.addEventListener(`click`, function (e) {
 });
 
 // go-button EventListener
-goButton.addEventListener(`submit`, function (e) {
+goButton.addEventListener(`click`, function (e) {
   const selection = userSelection.selectedIndex;
   game.play(selection);
   updateScoreTallyUI();
