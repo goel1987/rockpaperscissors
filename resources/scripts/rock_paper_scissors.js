@@ -3,7 +3,7 @@ class RockPaperScissors {
     this.username = username;
     this.score = {
       user: 0,
-      cpu:0 
+      cpu: 0 
     },
     this.gameHistoryLog = [];
   }
@@ -32,31 +32,32 @@ class RockPaperScissors {
    * @param {string} userSelection user selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    * @param {string} cpuSelection computer selection. Can only be one of the following values [`rock`, `paper`, `scissors`]
    */
+
   determineWinner(userSelection, cpuSelection){
     if(userSelection === cpuSelection) {
       return 'tie';
     }
-    if(userSelection == 'rock') {
-      if(cpuSelection == 'scissors'){
+    if(userSelection === 'rock') {
+      if(cpuSelection === 'scissors'){
         return 'win';
       }
       else if(cpuSelection == 'paper'){
         return 'lose'
       }
     }
-    else if(userSelection == 'paper') {
-      if(cpuSelection == 'scissors'){
+    else if(userSelection === 'paper') {
+      if(cpuSelection === 'scissors'){
         return 'lose';
       }
-      else if(cpuSelection == 'rock'){
+      else if(cpuSelection === 'rock'){
         return 'win';
       }
     }
-    else if(userSelection == 'scissors') {
-      if(cpuSelection == 'rock'){
+    else if(userSelection === 'scissors') {
+      if(cpuSelection === 'rock'){
         return 'lose';
       }
-      else if(cpuSelection == 'paper'){
+      else if(cpuSelection === 'paper'){
         return 'win'
       }
     }
@@ -70,12 +71,17 @@ class RockPaperScissors {
     let cpuSelection = this.generateCPUResponse();
     let winner = this.determineWinner(userSelection, cpuSelection);
 
-    // if the user won the round
-    this.score.user ++;
-    // if the user cpu the round
-    this.score.cpu ++;
+     // if the user won the round // TODO: Add some statement so scores update properly
+    
+      this.score.user ++;
+     
+     // if the user cpu the round
+     
+      this.score.cpu ++;
+     
 
     this.gameHistoryLog.push(`User selected ${userSelection}, CPU selected ${cpuSelection}: ${winner} wins! `);
+
   }
 
 }
